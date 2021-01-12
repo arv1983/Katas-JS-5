@@ -143,14 +143,24 @@ function calculateRemainder(div) {
     return divd / divs;
 }
 
-//kata6 ///////////////////////////////////////// PENSAR e RETORNAR 
+//kata6
 
 function testDistinctValues1() {
-
+    let resultado = distinctValues(6, 2);
+    console.assert(typeof(resultado) === 'number', {
+        "function": "distinctValues(6, 2)",
+        "expected": 'number',
+        "resultado": resultado
+    });
 }
 
 function testDistinctValues2() {
-
+    let resultado = distinctValues(6, 2);
+    console.assert(resultado === 3, {
+        "function": "distinctValues(6, 2)",
+        "expected": '3',
+        "resultado": resultado
+    });
 }
 
 arr = [1, 3, 5, 3, 7, 3, 1, 1, 5];
@@ -160,7 +170,7 @@ function distinctValues(arr) {
     return [new Set(arr)];
 }
 
-//Kata 7
+//kata7 ///////////////////////////////////////// PENSAR e RETORNAR 
 
 function testCountValues1() {
 
@@ -176,7 +186,7 @@ function countValues(arr) {
     return arr.reduce((map, val) => { map[val] = (map[val] || 0) + 1; return map }, {});
 }
 
-// Kata 8
+//kata8 ///////////////////////////////////////// PENSAR e RETORNAR 
 
 function testEvaluateExpression1() {
 
