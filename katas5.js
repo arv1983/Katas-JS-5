@@ -178,13 +178,14 @@ function countValues(arr) {
 
 // Kata 8
 
-testEvaluateExpression1() {
-
-}
-testEvaluateExpression2() {
+function testEvaluateExpression1() {
 
 }
 
-evaluateExpression() {
+function testEvaluateExpression2() {
+
+}
+
+function evaluateExpression() {
 
 }
