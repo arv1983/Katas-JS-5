@@ -24,7 +24,7 @@ function testReverseString2() {
     console.assert(typeof(resultado) == 'string', {
         "function": "reverseString(string)",
         "expected": 'string',
-        "resultado": resultado
+        "resultado": typeof(resultado)
     });
 }
 
@@ -45,7 +45,7 @@ function testReverseSentence2() {
     console.assert(typeof(resultado) === 'string', {
         "function": "reverseSentence(frase)",
         "expected": 'teste de frase',
-        "resultado": resultado
+        "resultado": typeof(resultado)
     });
 }
 
@@ -73,7 +73,7 @@ function testMinimumValue2() {
     console.assert(typeof(resultado) === 'number', {
         "function": "minimumValue(arr)",
         "expected": 'number',
-        "resultado": resultado
+        "resultado": typeof(resultado)
     });
 }
 
@@ -103,7 +103,7 @@ function testMaximumValue2() {
     console.assert(typeof(resultado) === 'number', {
         "function": "maximumValue([4, 2, 1, 3])",
         "expected": 'number',
-        "resultado": resultado
+        "resultado": typeof(resultado)
     });
 }
 
@@ -132,7 +132,7 @@ function testCalculateRemainder2() {
     console.assert(typeof(resultado) === 'number', {
         "function": "calculateRemainder(6 , 2)",
         "expected": 'number',
-        "resultado": resultado
+        "resultado": typeof(resultado)
     });
 }
 let divd = 6;
@@ -150,7 +150,7 @@ function testDistinctValues1() {
     console.assert(typeof(resultado) === 'number', {
         "function": "distinctValues(6, 2)",
         "expected": 'number',
-        "resultado": resultado
+        "resultado": typeof(resultado)
     });
 }
 
@@ -171,19 +171,55 @@ function distinctValues(arr) {
 }
 
 //kata7 ///////////////////////////////////////// PENSAR e RETORNAR 
+testCountValues1();
 
 function testCountValues1() {
-
+    let resultado = countValues(arr);
+    var esperado = [];
+    esperado = [
+        [1, 3],
+        [3, 3],
+        [5, 2],
+        [7, 1]
+    ];
+    console.assert(Array.isArray(resultado) == true, {
+        "function": "countValues(arr)",
+        "expected": 'true',
+        "resultado": Array.isArray(resultado)
+    });
 }
+testCountValues2();
 
 function testCountValues2() {
-
+    let resultado = countValues(arr);
+    var esperado = [];
+    esperado = [
+        [1, 3],
+        [3, 3],
+        [5, 2],
+        [7, 1]
+    ];
+    console.assert(resultado == esperado, {
+        "function": "countValues(arr)",
+        "expected": '[[1, 3][3, 3][5, 2][7, 1]]',
+        "resultado": resultado
+    });
 }
-arr = [1, 3, 5, 3, 7, 3, 1, 1, 5];
-console.log(countValues(arr))
+arr3 = [1, 3, 5, 3, 7, 3, 1, 1, 5];
+console.log(countValues(arr3))
 
 function countValues(arr) {
-    return arr.reduce((map, val) => { map[val] = (map[val] || 0) + 1; return map }, {});
+    let arrayLetras = [];
+    for (let i = 0; i < arr.length; i++) {
+        let quantas = arr.filter(num => num === arr[i]).length;
+        arrayLetras.push([arr[i], quantas]);
+    }
+
+    let ok = arrayLetras.filter(function(item) {
+        return arrayLetras.hasOwnProperty(item) ? false : (arrayLetras[item] = true);
+    });
+
+    return ok;
 }
 
 //kata8 ///////////////////////////////////////// PENSAR e RETORNAR 
